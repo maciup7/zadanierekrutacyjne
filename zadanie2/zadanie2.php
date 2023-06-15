@@ -8,7 +8,10 @@
 </head>
 <body>
     <form method="post" action="landingtext.php">
-        Podaj tekst:<br/> <input type="text" name="tekst"><br/>
+        Podaj tekst:<br/> <input type="text" name="tekst">
+        <?php
+            if ($_SESSION['flaga1']>1){echo "Można podac tylko litery!";}
+        ?><br/>
         <input type="submit" value="Dodaj tekst">
     </form>
     <form method="post" action="landingnumer.php">
@@ -16,6 +19,7 @@
         <input type="submit" value="Dodaj liczbę">
     </form>
     <?php
+    echo $_SESSION['flaga1'];
     $TextInput1->getValue();
     ?>
 </body>
