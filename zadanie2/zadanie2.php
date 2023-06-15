@@ -16,9 +16,6 @@
         <input type="submit" value="Dodaj liczbę">
     </form>
     <?php
-    if (!isset($TextInput1->tekst)){$TextInput1= new TextInput;};
-    if (!isset($NumericInput1->tekst)){$NumericInput1= new NumericInput;};
-
     $TextInput1->getValue();
     ?>
 </body>

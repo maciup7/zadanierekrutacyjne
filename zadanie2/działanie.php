@@ -20,14 +20,10 @@
     }
 
     class NumericInput extends TextInput{
-
-        public function zczytanie(){
-            $this->tekst=filter_input(INPUT_POST,'numer');
-        }
-
         public function add($text){
             $_SESSION['tekst']=$_SESSION['tekst'].$text;
         }
     }
 
+    $TextInput1= new TextInput;
 ?>
