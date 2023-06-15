@@ -29,6 +29,6 @@
         }
     }
 
-    $TextInput1= new TextInput;
-    $NumericInput1= new NumericInput;
+    if(!isset($TextInput1->input)){$TextInput1= new TextInput;};
+    if(!isset($NumericInput1->input)){$NumericInput1= new NumericInput;};
 ?>
