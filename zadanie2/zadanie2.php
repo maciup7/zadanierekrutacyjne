@@ -22,9 +22,7 @@
         <input type="submit" value="Dodaj liczbę">
     </form>
     <?php
-    echo $_SESSION['flaga1'];
-    echo $_SESSION['flaga2'];
-
+    echo "Bieżąca wartość: <br/>";
     $TextInput1->getValue();
     ?>
 </body>

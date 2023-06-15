@@ -49,6 +49,8 @@
         public function add($text){
             if($_SESSION['flaga2']==1){
                 $_SESSION['tekst']=$_SESSION['tekst'].$text;
+            }else if($_SESSION['flaga2']==2){
+                $_SESSION['tekst']=$_SESSION['tekst'].filter_var($text,FILTER_SANITIZE_NUMBER_INT);
             }
         }
     }
