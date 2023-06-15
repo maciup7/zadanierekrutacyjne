@@ -4,10 +4,10 @@
     if (!isset($_SESSION['tekst'])){$_SESSION['tekst']='';}
 
     class TextInput{
-        public $tekst='';
+        public $input='';
 
         public function zczytanie(){
-            $this->tekst=filter_input(INPUT_POST,'tekst');
+            $this->input=filter_input(INPUT_POST,'tekst');
         }
 
         public function add($text){
@@ -20,10 +20,15 @@
     }
 
     class NumericInput extends TextInput{
+        public function zczytanie(){
+            $this->input=filter_input(INPUT_POST,'numer');
+        }
+
         public function add($text){
             $_SESSION['tekst']=$_SESSION['tekst'].$text;
         }
     }
 
     $TextInput1= new TextInput;
+    $NumericInput1= new NumericInput;
 ?>

@@ -1,6 +1,6 @@
 <?php
     session_start();
     include 'działanie.php';
-    $TextInput1->zczytanie();
-    $TextInput1->add($TextInput1->tekst);
+    $NumericInput1->zczytanie();
+    $NumericInput1->add($NumericInput1->input);
     header ('Location: zadanie2.php');
