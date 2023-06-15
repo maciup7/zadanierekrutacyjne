@@ -15,11 +15,16 @@
         <input type="submit" value="Dodaj tekst">
     </form>
     <form method="post" action="landingnumer.php">
-        Podaj liczbę:<br/> <input type="text" name="numer"><br/>
+        Podaj liczbę:<br/> <input type="text" name="numer">
+        <?php
+            if ($_SESSION['flaga2']>1){echo "Można podac tylko cyfry!";}
+        ?><br/>
         <input type="submit" value="Dodaj liczbę">
     </form>
     <?php
     echo $_SESSION['flaga1'];
+    echo $_SESSION['flaga2'];
+
     $TextInput1->getValue();
     ?>
 </body>

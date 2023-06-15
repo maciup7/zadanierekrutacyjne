@@ -1,6 +1,7 @@
 <?php
     session_start();
     $_SESSION['flaga1'];
+    $_SESSION['flaga2'];
 
     if (!isset($_SESSION['tekst'])){$_SESSION['tekst']='';}
 
@@ -34,11 +35,21 @@
     class NumericInput extends TextInput{
         public function zczytanie(){
             $this->input=filter_input(INPUT_POST,'numer');
-            
+            if (is_string($this->input)){
+                if (ctype_digit($this->input)){
+                    $_SESSION['flaga2']=1;
+                }else{
+                    $_SESSION['flaga2']=2;
+                }
+            }else{
+                $_SESSION['flaga2']=2;
+            }
         }
 
         public function add($text){
-            $_SESSION['tekst']=$_SESSION['tekst'].$text;
+            if($_SESSION['flaga2']==1){
+                $_SESSION['tekst']=$_SESSION['tekst'].$text;
+            }
         }
     }
 
