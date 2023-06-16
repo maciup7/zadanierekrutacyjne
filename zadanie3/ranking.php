@@ -29,11 +29,18 @@
 
         public function ranking(){
             $this->ranking=$this->gracz;
+
             print_r (array_column($this->ranking,2,0));
-            function fun($a, $b) { 
-                    return strcmp($a[2], $b[2]); 
-                }  
-            usort($this->ranking, 'fun');
+
+            function fun1($a, $b) { 
+                return $b[2]-$a[2]; 
+            }
+            function fun2($a, $b) { 
+                return $a[1]-$b[1]; 
+            }
+            
+            usort($this->ranking, 'fun1');
+            usort($this->ranking, 'fun2');
             
         }
 
