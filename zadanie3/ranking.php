@@ -5,6 +5,7 @@
 
     class RankingTable{
         public $gracz=array();
+        public $ranking=array();
         
         public function __construct($gracz){
             $this->gracz=$gracz;
@@ -26,8 +27,18 @@
             }
         }
 
-        public function playerRank(){
+        public function ranking(){
+            $this->ranking=$this->gracz;
+            print_r (array_column($this->ranking,2,0));
+            function fun($a, $b) { 
+                    return strcmp($a[2], $b[2]); 
+                }  
+            usort($this->ranking, 'fun');
+            
+        }
 
+        public function playerRank($ranking){
+            echo $this->ranking[$ranking-1][0];
         }
     }
 ?>
