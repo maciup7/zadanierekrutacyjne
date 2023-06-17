@@ -1,8 +1,6 @@
 <?php
     function recordResult(){
-
     }
-
     class RankingTable{
         public $gracz=array();
         public $ranking=array();
@@ -31,17 +29,18 @@
             $this->ranking=$this->gracz;
 
             print_r (array_column($this->ranking,2,0));
+            
+            function rank($a,$b){
+                if ($a[2]==$b[2]){
+                    if ($a[1] > $b[1]){
+                        return 1;
+                    }
+                }
+                return $a[2] < $b[2] ? 1 : -1;
+            }
 
-            function fun1($a, $b) { 
-                return $b[2]-$a[2]; 
-            }
-            function fun2($a, $b) { 
-                return $a[1]-$b[1]; 
-            }
-            
-            usort($this->ranking, 'fun1');
-            usort($this->ranking, 'fun2');
-            
+            usort($this->ranking,"rank");
+
         }
 
         public function playerRank($ranking){
