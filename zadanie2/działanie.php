@@ -1,7 +1,5 @@
 <?php
     session_start();
-    $_SESSION['flaga1'];
-    $_SESSION['flaga2'];
 
     if (!isset($_SESSION['tekst'])){$_SESSION['tekst']='';}
 

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    $_SESSION['flaga1']=0;
+    $_SESSION['flaga2']=0;
     include 'działanie.php';
 ?>
 <html>
