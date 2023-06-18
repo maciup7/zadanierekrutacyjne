@@ -13,17 +13,10 @@
         array('Maks','0','0'),
         array('Monika','0','0'));
     $table = new RankingTable($tabela);
-    echo "<pre>";
-    var_dump($table);
-    echo "</pre>";
     $table->recordResult('Jan',2,3);
     $table->recordResult('Monika',5,3);
     $table->recordResult('Maks',3,3);
-
     $table->ranking();
-    echo "<pre>";
-    var_dump($table);
-    echo "</pre>";
     $table->playerRank(1);
 ?>
 </body>

@@ -28,8 +28,6 @@
         public function ranking(){
             $this->ranking=$this->gracz;
 
-            print_r (array_column($this->ranking,2,0));
-            
             function rank($a,$b){
                 if ($a[2]==$b[2]){
                     if ($a[1] > $b[1]){
